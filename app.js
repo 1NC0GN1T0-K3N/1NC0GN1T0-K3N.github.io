@@ -7,7 +7,9 @@ let category = 'all';
 function updateExpansionState() {
   const visible = projects.filter(project => !project.hidden);
   const allOpen = visible.length > 0 && visible.every(project => project.open);
-  expand.textContent = allOpen ? 'Collapse All −' : 'Expand All ↗';
+  expand.innerHTML = allOpen
+    ? 'Collapse All <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/></svg>'
+    : 'Expand All <svg class="icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg>';
   expand.setAttribute('aria-expanded', String(allOpen));
   expand.disabled = visible.length === 0;
 }
