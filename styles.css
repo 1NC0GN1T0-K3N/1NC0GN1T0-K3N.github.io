@@ -235,3 +235,15 @@ nav a::after { transition: transform 350ms var(--ease); }
 @media (prefers-reduced-motion: reduce) {
  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Contact uses the full section width, with one consistent edge per column. */
+.contact-section > .wrap { display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 48px; row-gap: 28px; align-items: end; }
+.contact-section .section-label { grid-column: 1 / -1; }
+.contact-heading { margin: 0; gap: 16px; }
+.contact-bottom { flex-direction: column; align-items: flex-end; gap: 12px; }
+.contact-bottom .socials { justify-content: flex-end; }
+@media (max-width: 760px) {
+ .contact-section > .wrap { grid-template-columns: minmax(0,1fr); row-gap: 24px; }
+ .contact-bottom { flex-direction: row; align-items: center; justify-content: space-between; gap: 16px 24px; }
+ .contact-bottom .socials { justify-content: flex-start; }
+}
