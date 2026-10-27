@@ -259,21 +259,6 @@ nav a::after { transition: transform 350ms var(--ease); }
 .case-notes { padding-left: 20px; margin: 0; color: var(--muted); }
 .case-notes li + li { margin-top: 18px; }
 .case-notes strong { color: var(--white); font-weight: 500; }
-.results-table { overflow-x: auto; margin-block: 16px; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-caption { text-align: left; color: var(--muted); padding-bottom: 12px; }
-th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); }
-th { font-weight: 500; }
-.connect-demo { border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-top: 24px; background: #151515; }
-.demo-label { font-size: 12px; color: var(--muted); margin: 0 0 16px; }
-.demo-controls { display: flex; flex-wrap: wrap; gap: 8px; }
-.demo-controls button { background: transparent; color: var(--white); border: 1px solid #555; border-radius: 6px; padding: 10px 12px; min-height: 44px; font-size: 13px; }
-.demo-controls button[aria-pressed="true"] { background: var(--white); color: #111; }
-#demo-status { min-height: 5em; }
-.demo-state { display: grid; gap: 12px; font-size: 13px; }
-.demo-state div { display: grid; gap: 4px; }
-.demo-state dt { color: var(--muted); }
-.demo-state dd { margin: 0; }
 .development-heading { margin-top: 32px; }
 @media (min-width: 1400px) { .project-overview { font-size: 17px; } .portrait-stage { max-width: 400px; } }
 @media (max-width: 760px) {
@@ -284,5 +269,19 @@ th { font-weight: 500; }
  .summary-evidence { gap: 4px 16px; }
  .portrait-stage { max-width: 260px; }
  .project-detail { padding-left: 36px; padding-right: 0; }
- .connect-demo { padding: 16px; }
+
+}
+
+/* Larger introduction and portrait, with proportional tablet/mobile sizing. */
+.hero { padding-block: clamp(44px, 5vw, 80px); }
+.portrait-stage { max-width: 420px; }
+@media (min-width: 1400px) {
+ .portrait-stage { max-width: 500px; }
+ .hero h1 { font-size: clamp(64px, 4.7vw, 88px); }
+ .hero-role { font-size: 25px; }
+ .secondary { font-size: 19px; }
+}
+@media (max-width: 760px) {
+ .hero { padding-block: 40px; }
+ .portrait-stage { width: min(100%, 300px); max-width: 300px; }
 }

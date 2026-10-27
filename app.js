@@ -105,25 +105,3 @@ window.addEventListener('scroll', () => {
 }, {passive: true});
 window.addEventListener('resize', updateNavigation);
 updateNavigation();
-
-const demoStates = [
- ['Choose a gateway, fetch its models, and review your selection before import.', 'Original settings', 'Created before the first write'],
- ['Connect saves the original configuration, then applies the selected gateway and models with atomic file writes.', 'Selected gateway and models applied', 'Original settings preserved across repeated imports'],
- ['Use original config restores the saved baseline. Later edits require confirmation and are kept in a separate copy.', 'Original settings restored', 'Later edits preserved before confirmed restore']
-];
-for (const button of document.querySelectorAll('[data-demo-step]')) {
- button.addEventListener('click', () => {
-  const step = Number(button.dataset.demoStep);
-  document.querySelectorAll('[data-demo-step]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
-  ['demo-status', 'demo-config', 'demo-backup'].forEach((id, i) => document.getElementById(id).textContent = demoStates[step][i]);
- });
-}
-// Evidence anchors inside summaries must also reveal their destination.
-for (const link of document.querySelectorAll('.summary-evidence a[href^="#"]')) {
- link.addEventListener('click', () => {
-  const target = document.querySelector(link.hash);
-  if (target) { const details = target.closest('details'); if (details) setDisclosure(details, true); }
- });
-}
-
-document.querySelector('.demo-controls').hidden = false;
