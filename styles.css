@@ -285,3 +285,11 @@ nav a::after { transition: transform 350ms var(--ease); }
  .hero { padding-block: 40px; }
  .portrait-stage { width: min(100%, 300px); max-width: 300px; }
 }
+
+/* Keep evidence links separate from disclosure controls for assistive technology. */
+.project-card { border-bottom: 1px solid var(--line); }
+.project-card .project { border-bottom: 0; }
+.project-card > .summary-evidence { margin: 0; padding: 0 44px 24px 56px; }
+.project-card:has(.project[open]) { background: var(--soft); }
+@media (max-width: 1000px) { .project-card > .summary-evidence { padding-left: 44px; } }
+@media (max-width: 760px) { .project-card > .summary-evidence { padding-left: 36px; padding-right: 0; } }

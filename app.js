@@ -67,6 +67,7 @@ function filterProjects() {
   for (const project of projects) {
     const matchesCategory = category === 'all' || project.dataset.category.split(' ').includes(category);
     project.hidden = !matchesCategory;
+    project.closest('.project-card').hidden = !matchesCategory;
     if (!project.hidden) count++;
   }
   for (const button of buttons) button.setAttribute('aria-pressed', String(button.dataset.filter === category));
