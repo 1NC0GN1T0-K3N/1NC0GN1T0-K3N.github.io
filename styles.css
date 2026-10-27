@@ -257,6 +257,7 @@ nav a::after { transition: transform 350ms var(--ease); }
 .summary-evidence { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 12px; }
 .summary-evidence a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--white); text-decoration: underline; text-underline-offset: 5px; font-size: 13px; }
 .case-notes { padding-left: 20px; margin: 0; color: var(--muted); }
+.project-detail .case-notes + .project-note { margin-top: 24px; }
 .case-notes li + li { margin-top: 18px; }
 .case-notes strong { color: var(--white); font-weight: 500; }
 .development-heading { margin-top: 32px; }
